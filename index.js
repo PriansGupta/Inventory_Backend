@@ -7,7 +7,7 @@ const nodemailer = require("nodemailer");
 // const randomize = require("randomatic");
 
 const app = express();
-const PORT = 5000;
+const PORT = "https://inventory-backend-latest.vercel.app/";
 
 mongoose.connect(
   "mongodb+srv://priyanshg615:Jc6dvfqy1%40@cluster0.2xgudc9.mongodb.net/",
