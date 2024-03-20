@@ -36,6 +36,7 @@ const User = mongoose.model("User", {
     {
       title: String,
       quantity: String,
+      timestamp: String,
     },
   ],
   messages: [
@@ -256,7 +257,7 @@ app.post("/api/checkout", async (req, res) => {
 
 app.post("/api/orders", async (req, res) => {
   try {
-    const { email, orders } = req.body;
+    const { email, orders, timestamp } = req.body;
     const user = await User.findOne({ email: email });
 
     if (!user) {
@@ -266,6 +267,7 @@ app.post("/api/orders", async (req, res) => {
     const newItems = orders.map((order) => ({
       title: order.title,
       quantity: order.quantity,
+      timestamp: order.timestamp,
     }));
 
     const updatedUser = await User.findByIdAndUpdate(
