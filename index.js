@@ -8,7 +8,7 @@ const fs = require("fs");
 const pdfkit = require("pdfkit");
 
 const app = express();
-const PORT = 3000 || "https://inventory-backend-latest.vercel.app/";
+const PORT = "https://inventory-backend-latest.vercel.app/";
 
 mongoose.connect(
   "mongodb+srv://priyanshg615:Jc6dvfqy1%40@cluster0.2xgudc9.mongodb.net/",
